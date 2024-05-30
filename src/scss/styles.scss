@@ -1,1 +1,19 @@
+$primary:       #121212;
+$secondary:     #535353;
+$info:          #ffffff;
+$success:       #1DB954;
+$light:         #B3B3B3;
+$dark:          #212121;  
+
 @import "bootstrap/scss/bootstrap";
+
+
+
+section {
+    height: 100vh;
+}
+
+.nav-links-container {
+    border-radius: 10px;
+    width: 30%;
+}
