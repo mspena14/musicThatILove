@@ -4,16 +4,21 @@ $info:          #ffffff;
 $success:       #1DB954;
 $light:         #B3B3B3;
 $dark:          #212121;  
+$link-color: #535353; // Color predeterminado de los enlaces
 
 @import "bootstrap/scss/bootstrap";
 
 
 
-section {
-    height: 100vh;
+
+// Personaliza el botón del navbar-toggler
+.navbar-toggler {
+    border-color: $info; 
 }
 
-.nav-links-container {
-    border-radius: 10px;
-    width: 30%;
+// Personaliza el botón del navbar-toggler cuando está enfocado
+.navbar-toggler:focus {
+    border-color: $info !important; // Cambia el color del borde a blanco cuando el botón está enfocado
+    box-shadow: 0 0 0 0.2rem rgb(255, 255, 255);
 }
+
