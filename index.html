@@ -1,11 +1,154 @@
+<!-- CREAR UN CRUD DE ALGO QUE TE GUSTE (LO QUE SEA)
+(Trata de hacerlo con Bootstrap, pero el JSON-SERVER es inegociable para almacenar datos)
+-Permitir hacer un nuevo registro
+-Permitir leer todos los registros
+-Permitir actualizar un registro
+-Permitir actualizar un dato puntual de un registro
+-Permitir eliminar un registro
+-Permitir deshabilitar un registro
+Si cumples con lo anterior, crear un sistema de seguridad con un (login-register y un guardian)
+Si cumples con lo anterior, implementa alertas personalizadas
+Si cumples con lo anterior, implementa un boton para cambiar de modo oscuro-claro
+Si cumples con lo anterior, implementa un sistema de traducciones
+Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mismo -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music That I Love</title>
 </head>
-<body>
-    
+
+<body class="bg-primary">
+    <header class="sticky-top ">
+        <nav id="navbar-example2" class="navbar navbar-expand-lg bg-primary px-3 mb-3 d-flex">
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand text-info fw-bold" href="#home">
+                    <h1 class="fs-2"> Music that I love</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="nav nav-pills d-lg-flex flex-lg-row flex-column ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#favoritas-section">Favoritas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#generos-section">Generos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#agregar-cancion-section">Agregar canción</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto-section">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
+        <section id="home" class="row align-items-center">
+            <article class="col-4 ">
+                <div class="bg-secondary text-info py-5 px-4 rounded-4">
+                    <h2 class="text-info">¡Bienvenido a Music that I Love!</h2>
+                    <p class="">
+                        Soy Marlon, un apasionado de la música y un desarrollador de software que está dando sus
+                        primeros
+                        pasos en el mundo del desarrollo web. Este proyecto, Music that I Love, es mi espacio personal
+                        donde
+                        comparto mis gustos musicales contigo.
+                    </p>
+                    <p>
+                        En Music that I Love, encontrarás una colección de mis canciones favoritas organizadas por
+                        géneros
+                        musicales, también podrás encontrar mis canciones favoritas actualemente. Aunque aún estoy
+                        explorando lo básico del desarrollo frontend, este proyecto me brinda la
+                        oportunidad de aplicar mis habilidades y crear algo significativo para mí.
+                    </p>
+                    <span class="text-success">¡Ven y descubre mi mundo musical!</span>
+                </div>
+            </article>
+            <article class="col-5">
+                <img src="https://c1.wallpaperflare.com/preview/937/761/184/no-music-no-life-neon-sign-typography.jpg"
+                    alt="" class="rounded-5">
+            </article>
+        </section>
+        <section id="favoritas-section" class="text-info w-50">
+            <h2>Mis favoritas</h2>
+        </section>
+        <section id="generos-section" class="text-info">
+            <h2>Colección de generos</h2>
+        </section>
+        <section id="agregar-cancion-section" class="text-info row">
+            <figure class="col-lg-5 col-md-12 text-center d-flex align-items-center mt-3  justify-content-center">
+                <img src="https://c0.wallpaperflare.com/preview/400/572/15/iphone-x-beside-apple-watch-and-airpods.jpg"
+                    alt="Persona leyendo" class="col-8 col-lg-10 col-xxl-8 col-md-6 rounded-4">
+            </figure>
+            <article id="form-container"
+                class="col-lg-7 col-sm-12 col-md-12 d-flex justify-content-center mt-5 p-1 ps-3">
+                <form id="registration-form" class="row g-4 needs-validation me-md-5 " novalidate autocomplete="off">
+                    <div class="col-md-12 text-center">
+                        <h2 class="form-title fs-3 ">Agrega una canción</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="song" class="form-label titles fw-semibold">Nombre de la canción</label>
+                        <input type="text" class="form-control" id="song" placeholder="" required>
+                        <span class="invalid-feedback">Este campo es requerido.</span>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label for="artist" class="form-label fw-semibold">Artista</label>
+                        <input type="text" class="form-control" id="artist"
+                            placeholder="Ingresa el nombre del artista..." required>
+                        <span class="invalid-feedback">Este campo es requerido.</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="genre" class="form-label titles fw-semibold">Genero</label>
+                        <input type="text" class="form-control" id="genre"
+                            placeholder="" required>
+                        <span class="invalid-feedback">Este campo es requerido.</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label titles fw-semibold">Contraseña</label>
+                        <input type="password" class="form-control" id="password"
+                            placeholder="***********" required>
+                        <span class="invalid-feedback">Este campo es requerido.</span>
+                    </div>
+                    <div class="col-md-6 ">
+                        <label for="confirm-password" class="form-label titles fw-semibold">Confirma tu
+                            contraseña</label>
+                        <input type="password" class="form-control" id="confirm-password"
+                            placeholder="***********" required>
+                        <span class="invalid-feedback">Este campo es requerido.</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="song-link" class="form-label">Link canción</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                            <input type="text" class="form-control" id="song-link"
+                                aria-describedby="basic-addon3 basic-addon4" required>
+                                <span class="invalid-feedback">Este campo es requerido.</span>
+                        </div>
+                        <div class="form-text" id="basic-addon4">Example help text goes outside the input group.</div>
+
+                    </div>
+
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-info px-5 py-2 fw-semibold">Enviar</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <section id="contacto-section" class="text-info">
+        </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="./src/js/main.js"></script>
 </body>
+
 </html>
