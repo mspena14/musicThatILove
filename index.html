@@ -52,7 +52,7 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
         </nav>
     </header>
     <main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-        data-bs-smooth-scroll="true" class="container scrollspy-example p-3 rounded-2" tabindex="0">
+        data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
         <section id="home" class="row g-5 align-items-center justify-content-around ">
             <article class="col-5  ">
                 <div class="bg-secondary text-info py-5 px-4 rounded-4">
@@ -79,8 +79,15 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
                     alt="" class="figure-img img-fluid rounded rounded-5">
             </figure>
         </section>
-        <section id="favoritas-section" class="text-info w-50">
-            <h2>Mis favoritas</h2>
+        <section id="favoritas-section" class="text-info py-5 mt-5 w-100">
+            <h2 class="ps-4 mb-5">Mis favoritas</h2>
+
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="favorite-cards">
+
+                </div>
+            </div>
         </section>
         <section id="generos-section" class="text-info">
             <h2>Colección de generos</h2>
@@ -98,38 +105,39 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
                     </div>
                     <div class="col-md-6">
                         <label for="song" class="form-label titles fw-semibold">Nombre de la canción</label>
-                        <input type="text" class="form-control" id="song" placeholder="" required>
+                        <input type="text" class="form-control" id="song" placeholder="Nombre de la canción..." value=""
+                            required>
                         <span class="invalid-feedback">Este campo es requerido.</span>
-                            <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
+                        <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
                     </div>
                     <div class="col-md-6 ">
                         <label for="artist" class="form-label fw-semibold">Artista</label>
                         <input type="text" class="form-control" id="artist"
                             placeholder="Ingresa el nombre del artista..." required>
                         <span class="invalid-feedback">Este campo es requerido.</span>
-                            <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
+                        <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
                     </div>
                     <div class="col-md-6">
                         <label for="genre" class="form-label titles fw-semibold">Genero</label>
                         <input type="text" class="form-control" id="genre" placeholder="Rock, Pop, Rap..." required>
                         <span class="invalid-feedback">Este campo es requerido.</span>
-                            <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
+                        <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
                     </div>
 
                     <div class="col-6">
                         <label for="categoria" class="form-label titles fw-semibold">Escoge una categoría</label>
                         <select class="form-select" id="categoria" required>
-                          <option selected disabled value="">Seleccionar...</option>
-                          <option value="estudiar">Para estudiar</option>
-                          <option value="chill">Chill</option>
-                          <option value="freestyle">Freestyle</option>
-                          <option value="heavy">Para mover la cabeza</option>
-                          <option value="paratodos">Para todo momento</option>
-                          <option value="aseo">Para hacer aseo</option>
+                            <option selected disabled value="">Seleccionar...</option>
+                            <option value="Para estudiar">Para estudiar</option>
+                            <option value="Chill">Chill</option>
+                            <option value="Freestyle">Freestyle</option>
+                            <option value="Para mover la cabeza">Para mover la cabeza</option>
+                            <option value="Para todo momento">Para todo momento</option>
+                            <option value="Para hacer aseo">Para hacer aseo</option>
                         </select>
                         <span class="invalid-feedback">Elige una opción.</span>
-                            <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
-                      </div>
+                        <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
+                    </div>
                     <div class="col-12 ">
                         <label for="song-link" class="form-label">Link portada canción</label>
                         <div class="input-group">
@@ -137,9 +145,9 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
                             <input type="text" class="form-control rounded-end" id="song-img-link"
                                 aria-describedby="basic-addon3 basic-addon4" required>
                             <span class="invalid-feedback">Este campo es requerido.</span>
-                    <span class="valid-feedback">!Todos listo para rockear!😎🤘 </span>
+                            <span class="valid-feedback">!Todos listo para rockear!😎🤘 </span>
                         </div>
-                    </div>  
+                    </div>
                     <div class="col-12">
                         <label for="song-link" class="form-label">Link canción</label>
                         <div class="input-group">
@@ -147,7 +155,7 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
                             <input type="text" class="form-control rounded-end" id="song-link"
                                 aria-describedby="basic-addon3 basic-addon4" required>
                             <span class="invalid-feedback">Este campo es requerido.</span>
-                    <span class="valid-feedback">!Todos listo para rockear!😎🤘 </span>
+                            <span class="valid-feedback">!Todos listo para rockear!😎🤘 </span>
                         </div>
                     </div>
                     <div class="form-check form-switch col-12 ps-5 ms-2">
