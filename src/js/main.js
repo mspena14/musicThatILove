@@ -54,8 +54,13 @@ function validarCheckbox() {
 formulario.addEventListener('submit', async (event) => {
     event.preventDefault()
     let favorite = validarCheckbox()
-    console.log(favorite)
-    //Se obtienen los valores de los inputs
+    
+    if (!form.checkValidity()) {
+        // Añadir clases de Bootstrap para mostrar mensajes de error
+        form.classList.add('was-validated');
+        return;
+    }
+    //Se obtienen los valores de los inputs y se asignan a las keys del json
     const newSong = {
         song: song.value.toLowerCase(),
         artista: artista.value.toLowerCase(),
