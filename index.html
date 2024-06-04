@@ -21,7 +21,7 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
     <title>Music That I Love</title>
 </head>
 
-<body class="bg-primary">
+<body class="bg-primary w-100">
     <header class="sticky-top ">
         <nav id="navbar-example2" class="navbar navbar-expand-lg bg-primary px-3 mb-3 d-flex">
             <div class="container-fluid d-flex justify-content-between">
@@ -53,8 +53,8 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
     </header>
     <main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
-        <section id="home" class="row g-5 align-items-center justify-content-around ">
-            <article class="col-5  ">
+        <section id="home" class="row row-cols-1 row-cols-lg-2 g-5 align-items-center justify-content-around w-100">
+            <article class="col ">
                 <div class="bg-secondary text-info py-5 px-4 rounded-4">
                     <h2 class="text-info">¡Bienvenido a Music that I Love!</h2>
                     <p class="">
@@ -74,7 +74,7 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
                     <span class="text-success fw-bold">¡Ven y descubre mi mundo musical!</span>
                 </div>
             </article>
-            <figure class=" figure col-6">
+            <figure class=" figure col">
                 <img src="https://c1.wallpaperflare.com/preview/937/761/184/no-music-no-life-neon-sign-typography.jpg"
                     alt="" class="figure-img img-fluid rounded rounded-5">
             </figure>
@@ -84,13 +84,22 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
 
 
             <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="favorite-cards">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5 g-3" id="favorite-cards">
 
                 </div>
             </div>
         </section>
         <section id="generos-section" class="text-info">
-            <h2>Colección de generos</h2>
+            <h2 class="ps-4 mb-5">Colección de generos</h2>
+            <div class="d-flex justify-content-center gap-5 flex-wrap mb-5 px-5" id="botones-generos">
+              
+
+            </div>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 row-cols-xxl-5 g-3" id="generos-cards">
+
+                </div>
+            </div>
         </section>
         <section id="agregar-cancion-section" class="text-info row">
             <figure class="col-lg-5 col-md-12 text-center d-flex align-items-center mt-3  justify-content-center">
@@ -124,7 +133,7 @@ Si cumples con lo anterior sigue mejorando el sistema, el limite lo pones tu mis
                         <span class="valid-feedback">!Todos listo para rockear!😎🤘</span>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-md-6">
                         <label for="categoria" class="form-label titles fw-semibold">Escoge una categoría</label>
                         <select class="form-select" id="categoria" required>
                             <option selected disabled value="">Seleccionar...</option>
