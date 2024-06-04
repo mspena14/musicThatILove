@@ -10,7 +10,7 @@ import Alert from 'bootstrap/js/dist/alert'
 import { Tooltip, Toast, Popover } from 'bootstrap'
 
 //Se importan las funciones de api.js
-import { agregarCancion, traerCancionesFavoritas, bucarCancion, eliminarCancion, editarCancion, traerGeneros } from "./api.js"
+import { agregarCancion, traerCancionesFavoritas, bucarCancion, eliminarCancion, editarCancion, traerGeneros, traerCancionesGenero } from "./api.js"
 
 //Se importan alertas desde alerts.js
 
@@ -70,6 +70,37 @@ async function mostrarBotonesGeneros() {
 })
 }
 
+//Le asignamos un escuchador de eventos al contenedor de los botones de los generos
+
+botonesGenerosContainer.addEventListener('click', async (event) => {
+    if (event.target.tagName === 'INPUT') {
+        generoElegido = event.target.id
+        console.log(generoElegido)
+        const cancionesPorGenero = await traerCancionesGenero(generoElegido)
+        console.log(cancionesPorGenero)
+        cancionesPorGenero.forEach(cancion => {
+            generosCardsContainer.innerHTML +=  `                    
+            <div class="col" id="${cancion.id}">
+            <div class="card bg-primary rounded-top-3 shadow">
+                <img class="card-img-top rounded-top-3" src=${cancion.songImgLink} width="100%" height="225">  
+                <div class="card-body bg-dark text-info rounded-bottom-3">
+                    <h5 class="card-title text-capitalize">${cancion.song}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-dark text-capitalize text-info-emphasis">${cancion.artista}</h6>
+                    <p class="card-text text-capitalize">${cancion.genero}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="">
+                        <a href="#agregar-cancion-section"><button type="button" class="btn btn-outline-warning" data-id="${cancion.id}">Editar</button></a>
+                            <button type="button" class="btn btn-outline-danger" data-id="${cancion.id}">Eliminar</button>
+                        </div>
+                        <a class="text-decoration-none text-success cards-link" href=${cancion.songLink} target="_blank" rel="noopener noreferrer">¡Escuchala!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `
+        })
+    }
+})
 
 //Funcion para validar si el checkbox está marcado y retornar respuesta
 function validarCheckbox() {

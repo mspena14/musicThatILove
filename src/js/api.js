@@ -18,7 +18,6 @@ export async function traerCancionesFavoritas() {
 }
 
 //Creamos función para traer todos los generos
-
 export async function traerGeneros() {
     const response = await fetch(`${API}`)
     const data = await response.json()
@@ -31,6 +30,15 @@ export async function traerGeneros() {
     return listaGeneros
 }
 
+//Creamos función para traer todas las canciones del genero elegido
+
+export async function traerCancionesGenero(genero) {
+    console.log(genero)
+    const response = await fetch(`${API}?genero=${genero}`)
+    const data = await response.json()
+    console.log(data)
+    return data
+}
 //Creamos función para buscar una canción 
 export async function bucarCancion(id) {
     const response = await fetch(`${API}/${id}`)
